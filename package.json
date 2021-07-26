@@ -1,6 +1,6 @@
 {
   "name": "drizzle-search-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "毛毛雨搜索工具",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,10 @@
     "mmy": "./index.js"  
   },  
   "author": "atseaside",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:atseaside/drizzle-search-tools.git"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
