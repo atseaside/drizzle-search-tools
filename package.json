@@ -1,0 +1,18 @@
+{
+  "name": "drizzle-search-tools",
+  "version": "1.0.4",
+  "description": "毛毛雨搜索工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {  
+    "mmy": "./index.js"  
+  },  
+  "author": "atseaside",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0"
+  }
+}
