@@ -32,7 +32,7 @@ class Search {
             return;
         }
         const temp = params.split(':');
-        this.dir = temp[0];
+        this.dir = path.normalize(temp[0]);
         this.str = temp[1];
 
         this.getAllPath(rootPath);
