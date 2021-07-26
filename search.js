@@ -13,13 +13,15 @@ class Search {
         this.log = chalk.green('\n---搜索完成，本次搜索时长---');
         this.all = [];
         this.exactFiles = [];
-        this.ignore = ['node_modules', 'README.md', 'package-lock.json', 'package.json'];
+        this.ignore = ['.git', 'node_modules', 'README.md', 'package-lock.json', 'package.json'];
 
         this.init();
     }
 
     init() {
-        console.log(chalk.yellow(`\n---搜索开始，本搜索工具仅针对 .sleet 文件，如有其他需要请联系作者---\n`));
+        console.log(
+            chalk.yellow(`\n---搜索开始，本搜索工具仅针对 .sleet 文件，如有其他需要请联系作者---\n`)
+        );
         console.time(this.log);
         const { params } = this;
 
@@ -97,7 +99,7 @@ class Search {
         exactPaths.forEach((n, m) => {
             fs.readdirSync(n).forEach((j, k) => {
                 // 拼接绝对路径
-                const temp = `${n}/${j}`;
+                const temp = path.normalize(`${n}/${j}`);
                 const isFile = fs.statSync(temp).isFile();
                 isFile && this.exactFiles.push(temp);
             });
