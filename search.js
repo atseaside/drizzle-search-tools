@@ -113,7 +113,7 @@ class Search {
                 return;
             }
 
-            const filePath = `${dirName}/${file}`;
+            const filePath = path.normalize(`${dirName}/${file}`);
 
             const isDirectory = fs.statSync(filePath).isDirectory();
 
