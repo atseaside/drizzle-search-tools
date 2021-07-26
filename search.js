@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const { execSync } = require('child_process');
-let execSyncFlag = 0; // 只打开第一个
 
 const rootPath = process.cwd();
 class Search {
@@ -84,10 +83,7 @@ class Search {
         );
         console.log(result);
 
-        if (execSyncFlag === 0) {
-            execSync(`code -r -g ${result[0].filePath}`);
-        }
-        ++execSyncFlag;
+        execSync(`code -r -g ${result[0].filePath}`);
     }
 
     generateExactDirs() {
