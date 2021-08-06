@@ -1,6 +1,7 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
+const { excludes } = require('./config');
 
 const { execSync } = require('child_process');
 
@@ -13,7 +14,6 @@ class Search {
         this.log = chalk.green('\n---搜索完成，本次搜索时长---');
         this.all = [];
         this.exactFiles = [];
-        this.ignore = ['.git', 'node_modules', 'README.md', 'package-lock.json', 'package.json'];
 
         this.init();
     }
@@ -109,7 +109,7 @@ class Search {
     getAllPath(dirName) {
         const dirFiles = fs.readdirSync(dirName);
         dirFiles.forEach((file, i) => {
-            if (this.ignore.includes(file)) {
+            if (excludes.includes(file)) {
                 return;
             }
 

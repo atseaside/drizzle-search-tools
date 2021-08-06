@@ -1,14 +1,14 @@
 {
   "name": "drizzle-search-tools",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "毛毛雨搜索工具",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {  
-    "mmy": "./index.js"  
-  },  
+    "mmy": "./bin/index.js"
+  }, 
   "author": "atseaside",
   "repository": {
     "type": "git",
